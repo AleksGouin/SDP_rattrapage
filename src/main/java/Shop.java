@@ -1,7 +1,13 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.Scanner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import java.io.FileReader;
+import org.json.simple.JSONArray;
+import java.util.ArrayList;
 
 public class Shop {
     private Food[] foods;
@@ -54,11 +60,36 @@ public class Shop {
         System.out.println("***************");
         System.out.println("\n");
     }
+/*
+    private Shop readJSONFile(String place){
+        JSONParser parser = new JSONParser();
+        Food[] foods;
+        try {
+            Object obj = parser.parse(new FileReader(place)); //problem here
 
-    private void readJSONFile(String place){
+            JSONObject jsonObject =  (JSONObject) obj;
 
+            String name = (String) jsonObject.get("name");
+
+            String shelfLife = (String) jsonObject.get("Shelf life");
+            int shelf_life = Integer.parseInt(shelfLife);
+
+            String price_ = (String) jsonObject.get("Price");
+            double price = Double.parseDouble(price_);
+
+            foods.add(new Food(name, shelf_life, price)); // problem here
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    Shop shop = new Shop(foods);
     }
-
+    Unfinished
+*/
     public static void main(String[] args) {
 
         Shop shop = new Shop();
